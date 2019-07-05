@@ -27,8 +27,13 @@ $ sudo raspi-config
 Set GPU to 256 and enable ssh (ssh is optional)
 
 $ sudo apt-get update
+
 $ sudo apt-get install git
+
 $ git clone https://github.com/MarkusIppy/QT5.12.4-raspian-Buster-EGLFS
+
 $ cd QT5.12.4-raspian-Buster-EGLFS
+
 $ sudo chmod +x compileQT.sh
+
 $ ./compileQT.sh
