@@ -291,3 +291,4 @@ Qt will be installed into '/opt/QT5'.
 
 Prior to reconfiguration, make sure you remove any leftovers from
 the previous build.
+```
