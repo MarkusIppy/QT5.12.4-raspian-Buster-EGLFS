@@ -1,4 +1,4 @@
-# QT5.12.4-raspian-Buster-EGLFS
+# QT5.12.4-raspian-Buster-EGLFS  !!!!BROKEN!!!! see QT bug https://bugreports.qt.io/browse/QTBUG-76889
 Compile QT 5.12.4 on raspbian Buster and EGLFS support
 
 
