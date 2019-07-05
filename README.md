@@ -42,7 +42,6 @@ $ ./compileQT.sh
 ```
 
 ```
-
 Configure summary:
 
 Building on: linux-g++ (arm, CPU features: <none>)
