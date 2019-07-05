@@ -39,7 +39,6 @@ $ sudo chmod +x compileQT.sh
 $ ./compileQT.sh
 
 
-```
 
 ```
 Configure summary:
