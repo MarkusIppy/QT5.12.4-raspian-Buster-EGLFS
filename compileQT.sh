@@ -37,7 +37,7 @@ sudo chown pi:pi /opt/QT5
 
 echo "Configure QT "
 
-PKG_CONFIG_LIBDIR=/usr/lib/arm-linux-gnueabihf/pkgconfig PKG_CONFIG_SYSROOT_DIR=/ \../qt-everywhere-src-5.12.4/configure -v -opengl es2 -eglfs -no-pch -no-gtk -no-use-gold-linker -device linux-rasp-pi3-vc4-g++ \-device-option CROSS_COMPILE=/usr/bin/ -opensource -confirm-license -reduce-exports \-force-pkg-config -nomake examples -no-compile-examples -skip qtwayland -skip qtwebengine -release \-qt-pcre -evdev -system-freetype-glib -gstreamer -prefix /opt/QT5
+PKG_CONFIG_LIBDIR=/usr/lib/arm-linux-gnueabihf/pkgconfig PKG_CONFIG_SYSROOT_DIR=/ \../qt-everywhere-src-5.12.4/configure -v -opengl es2 -eglfs -no-pch -no-gtk -device linux-rasp-pi3-vc4-g++ \-device-option CROSS_COMPILE=/usr/bin/ -opensource -confirm-license -reduce-exports \-force-pkg-config -nomake examples -no-compile-examples -skip qtwayland -skip qtwebengine -release \-qt-pcre -evdev -glib -gstreamer -prefix /opt/QT5
 
 echo "Compile QT with 4 cores "
 make -j4
