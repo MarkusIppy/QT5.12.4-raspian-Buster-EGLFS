@@ -52,6 +52,9 @@ echo 'export LD_LIBRARY_PATH=/opt/QT5/lib' >> ~/.bashrc
 echo 'export PATH=/opt/QT5/bin:$PATH' >> ~/.bashrc 
 source ~/.bashrc
 
+echo "Install Sense hat libraries"
+sudo apt-get install sense-hat
+
 echo "Install Lorn Potters Sensehat Plugin on the system"
 mkdir /home/pi/senshatplugin
 git clone https://github.com/lpotter/qsensors-sensehatplugin.git /home/pi/senshatplugin
