@@ -44,9 +44,9 @@ $ ./compileQT.sh
 Configure summary:
 
 Building on: linux-g++ (arm, CPU features: <none>)
-Building for: devices/linux-rasp-pi-g++ (arm, CPU features: <none>)
+Building for: devices/linux-rasp-pi3-vc4-g++ (arm, CPU features: neon)
 Target compiler: gcc 8.3.0
-Configuration: cross_compile use_gold_linker enable_new_dtags largefile shared rpath release c++11 c++14 c++1z concurrent dbus reduce_exports stl
+Configuration: cross_compile enable_new_dtags largefile neon shared rpath release c++11 c++14 c++1z concurrent dbus reduce_exports stl
 Build options:
   Mode ................................... release
   Optimize release build for size ........ no
@@ -54,17 +54,17 @@ Build options:
   Using C standard ....................... C11
   Using C++ standard ..................... C++1z
   Using ccache ........................... no
-  Using gold linker ...................... yes
+  Using gold linker ...................... no
   Using new DTAGS ........................ yes
   Using precompiled headers .............. no
   Using LTCG ............................. no
   Target compiler supports:
-    NEON ................................. no
+    NEON ................................. yes
   Build parts ............................ libs
 Qt modules and options:
   Qt Concurrent .......................... yes
   Qt D-Bus ............................... yes
-  Qt D-Bus directly linked to libdbus .... yes
+  Qt D-Bus directly linked to libdbus .... no
   Qt Gui ................................. yes
   Qt Network ............................. yes
   Qt Sql ................................. yes
@@ -73,14 +73,14 @@ Qt modules and options:
   Qt Xml ................................. yes
 Support enabled for:
   Using pkg-config ....................... yes
-  udev ................................... yes
+  udev ................................... no
   Using system zlib ...................... yes
 Qt Core:
   DoubleConversion ....................... yes
     Using system DoubleConversion ........ no
   GLib ................................... yes
-  iconv .................................. no
-  ICU .................................... yes
+  iconv .................................. yes
+  ICU .................................... no
   Tracing backend ........................ <none>
   Logging backends:
     journald ............................. no
@@ -92,10 +92,10 @@ Qt Network:
   IPv6 ifname ............................ yes
   libproxy ............................... no
   Linux AF_NETLINK ....................... yes
-  OpenSSL ................................ yes
+  OpenSSL ................................ no
     Qt directly linked to OpenSSL ........ no
-  OpenSSL 1.1 ............................ yes
-  DTLS ................................... yes
+  OpenSSL 1.1 ............................ no
+  DTLS ................................... no
   SCTP ................................... no
   Use system proxies ..................... yes
 Qt Gui:
@@ -104,12 +104,12 @@ Qt Gui:
     Using system FreeType ................ yes
   HarfBuzz ............................... yes
     Using system HarfBuzz ................ no
-  Fontconfig ............................. yes
+  Fontconfig ............................. no
   Image formats:
     GIF .................................. yes
     ICO .................................. yes
     JPEG ................................. yes
-      Using system libjpeg ............... yes
+      Using system libjpeg ............... no
     PNG .................................. yes
       Using system libpng ................ yes
   EGL .................................... yes
@@ -124,15 +124,15 @@ Qt Gui:
   Session Management ..................... yes
 Features used by QPA backends:
   evdev .................................. yes
-  libinput ............................... yes
+  libinput ............................... no
   INTEGRITY HID .......................... no
-  mtdev .................................. yes
+  mtdev .................................. no
   tslib .................................. no
-  xkbcommon .............................. yes
+  xkbcommon .............................. no
   X11 specific:
     XLib ................................. yes
     XCB Xlib ............................. yes
-    EGL on X11 ........................... no
+    EGL on X11 ........................... yes
 QPA backends:
   DirectFB ............................... no
   EGLFS .................................. yes
@@ -141,23 +141,15 @@ QPA backends:
     EGLFS i.Mx6 .......................... no
     EGLFS i.Mx6 Wayland .................. no
     EGLFS RCAR ........................... no
-    EGLFS EGLDevice ...................... no
+    EGLFS EGLDevice ...................... yes
     EGLFS GBM ............................ yes
     EGLFS VSP2 ........................... no
     EGLFS Mali ........................... no
-    EGLFS Raspberry Pi ................... yes
-    EGLFS X11 ............................ no
+    EGLFS Raspberry Pi ................... no
+    EGLFS X11 ............................ yes
   LinuxFB ................................ yes
   VNC .................................... yes
   Mir client ............................. no
-  XCB:
-    Using system-provided XCB libraries .. no
-    XCB XKB .............................. no
-    XCB XInput ........................... yes
-    Native painting (experimental) ....... no
-    GL integrations:
-      GLX Plugin ......................... no
-      EGL-X11 Plugin ..................... no
 Qt Sql:
   SQL item models ........................ yes
 Qt Widgets:
@@ -171,7 +163,7 @@ Qt Sql Drivers:
   MySql .................................. no
   OCI (Oracle) ........................... no
   ODBC ................................... no
-  PostgreSQL ............................. yes
+  PostgreSQL ............................. no
   SQLite2 ................................ no
   SQLite ................................. yes
     Using system provided SQLite ......... no
@@ -274,8 +266,6 @@ Qt Tools:
 
 Note: Also available for Linux: linux-clang linux-icc
 
-Note: Disabling X11 Accessibility Bridge: D-Bus or AT-SPI is missing.
-
 WARNING: QDoc will not be compiled, probably because libclang could not be located. This means that you cannot build the Qt documentation.
 
 Either ensure that llvm-config is in your PATH environment variable, or set LLVM_INSTALL_DIR to the location of your llvm installation.
@@ -283,10 +273,7 @@ On Linux systems, you may be able to install libclang by installing the libclang
 On macOS, you can use Homebrew's llvm package.
 On Windows, you must set LLVM_INSTALL_DIR to the installation path.
 
-Qt is now configured for building. Just run 'make'.
-Once everything is built, you must run 'make install'.
-Qt will be installed into '/opt/QT5'.
+ERROR: Feature 'ssl' was enabled, but the pre-condition 'config.winrt || features.securetransport || features.openssl' failed.
 
-Prior to reconfiguration, make sure you remove any leftovers from
-the previous build.
+ERROR: Feature 'fontconfig' was enabled, but the pre-condition '!config.msvc && features.system-freetype && libs.fontconfig' failed.
 ```
