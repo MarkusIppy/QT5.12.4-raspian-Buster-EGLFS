@@ -274,3 +274,13 @@ ERROR: Feature 'ssl' was enabled, but the pre-condition 'config.winrt || feature
 
 ERROR: Feature 'fontconfig' was enabled, but the pre-condition '!config.msvc && features.system-freetype && libs.fontconfig' failed.
 ```
+
+Haven't tried this yet :
+
+sudo nano ~/.profile
+
+Add the line 
+...
+export QT_QPA_EGLFS_KMS_CONFIG=/opt//QT5/eglfs.json
+....
+source .profile
