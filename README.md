@@ -1,11 +1,11 @@
-# QT5.12.4-raspian-Buster-EGLFS  !!!!BROKEN!!!! see QT bug https://bugreports.qt.io/browse/QTBUG-76889
+# QT5.12.4-raspian-Buster-EGLFS 
+
 Compile QT 5.12.4 on raspbian Buster and EGLFS support
 
 
-Automated installation scripts to compile QT5 on Raspbian Buster  for Raspberry PI with EGLFS support This whole process takes about 4-6 The script is based on this tutorial 
-http://www.tal.org/tutorials/building-qt-58-raspberry-pi-debian-stretch
+Automated installation scripts to compile QT5 on Raspbian Buster  for Raspberry PI with EGLFS support This whole process takes about 4-6 hours .
 
-The resulting image will work on any pi including Pi4 . For compiling you need minumum a Pi2 
+The Resulting image will work on Raspberry PI4 with debian buster 
 
 Usage : Download raspbian Buster Lite from: https://www.raspberrypi.org/downloads/raspbian/ and install it on your SD card (the lite version will be enough)
 
@@ -22,9 +22,6 @@ $ sudo dphys-swapfile swapon
 Source : https://wpitchoune.net/tricks/raspberry_pi3_increase_swap_size.html
 
 After increasing the swap size,
-
-$ sudo raspi-config
-Set GPU to 256 and enable ssh (ssh is optional)
 
 $ sudo apt-get update
 
