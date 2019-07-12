@@ -38,6 +38,7 @@ cd buildQT
 echo "create and Change ownership of QT install folder"
 sudo mkdir /opt/QT5
 sudo chown pi:pi /opt/QT5
+sudo cp eglfs.json /opt/QT5
 
 echo "Configure QT "
 
