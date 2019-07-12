@@ -2,6 +2,10 @@
 
 # QT5.12.4 Installation script for for on Debian Buster
 
+echo "Add user pi to the render group"
+
+sudo gpasswd -a pi render
+
 echo "Install QT5.12.4 on rasbian Buster" 
 cd
 sudo apt-get -y --force-yes update
