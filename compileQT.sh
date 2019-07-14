@@ -6,6 +6,11 @@ echo "Add user pi to the render group"
 
 sudo gpasswd -a pi render
 
+echo "create and Change ownership of QT install folder"
+sudo mkdir /opt/QT5
+sudo chown pi:pi /opt/QT5
+sudo cp /home/pi/QT5.12.5-raspbiabn-Buster-EGLFS\eglfs.json /opt/QT5
+
 echo "Install QT5.12.4 on rasbian Buster" 
 cd
 sudo apt-get -y --force-yes update
@@ -34,11 +39,6 @@ echo "Create Shadow build directory"
 cd
 mkdir buildQT
 cd buildQT
-
-echo "create and Change ownership of QT install folder"
-sudo mkdir /opt/QT5
-sudo chown pi:pi /opt/QT5
-sudo cp /home/pi/QT5.12.5-raspbiabn-Buster-EGLFS\eglfs.json /opt/QT5
 
 echo "Configure QT "
 
