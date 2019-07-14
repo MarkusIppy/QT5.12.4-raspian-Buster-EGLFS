@@ -11,6 +11,7 @@ Usage : Download raspbian Buster Lite from: https://www.raspberrypi.org/download
 
 After booting up your PI, follw the steps below :
 
+
 If you use a pi with less then 2 GB ram then you will need to increase the swap file size 
 
 Increase Rpi's swap size. As root, edit the file /etc/dphys-swapfile and modify the variable CONF_SWAPSIZE
@@ -27,7 +28,7 @@ $ sudo apt-get update
 
 $ sudo apt-get install git
 
-$ git clone https://github.com/MarkusIppy/QT5.12.4-raspian-Buster-EGLFS
+$ git clone https://github.com/MarkusIppy/QT5.12.4-raspian-Buster-EGLFS.git
 
 $ cd QT5.12.4-raspian-Buster-EGLFS
 
