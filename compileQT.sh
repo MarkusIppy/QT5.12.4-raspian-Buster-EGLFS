@@ -2,14 +2,17 @@
 
 # QT5.12.4 Installation script for for on Debian Buster
 
-echo "Add user pi to the render group"
+#Set the username used to compile on your system
+USER="pi"
 
-sudo gpasswd -a pi render
+echo "Add user $USER to the render group"
+
+sudo gpasswd -a $USER render
 
 echo "create and Change ownership of QT install folder"
 sudo mkdir /opt/QT5
-sudo chown pi:pi /opt/QT5
-sudo cp /home/pi/QT5.12.4-raspian-Buster-EGLFS/eglfs.json /opt/QT5
+sudo chown $USER:$USER /opt/QT5
+sudo cp /home/$USER/QT5.12.4-raspian-Buster-EGLFS/eglfs.json /opt/QT5
 
 echo "Install QT5.12.4 on rasbian Buster" 
 cd
@@ -61,9 +64,9 @@ echo "Install Sense hat libraries"
 sudo apt-get install sense-hat
 
 echo "Install Lorn Potters Sensehat Plugin on the system"
-mkdir /home/pi/senshatplugin
-git clone https://github.com/lpotter/qsensors-sensehatplugin.git /home/pi/senshatplugin
-cd /home/pi/senshatplugin
+mkdir /home/$USER/senshatplugin
+git clone https://github.com/lpotter/qsensors-sensehatplugin.git /home/$USER/senshatplugin
+cd /home/$USER/senshatplugin
 qmake
 make -j4
 sudo make install
